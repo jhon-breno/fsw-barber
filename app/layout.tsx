@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Card, CardContent } from "./_components/ui/card"
+import { Toaster } from "./_components/ui/sonner"
+import Footer from "./_components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,15 +21,8 @@ export default function RootLayout({
     <html lang="pt-br" className="dark">
       <body className={inter.className}>
         {children}
-        <footer>
-          <Card>
-            <CardContent className="px-5 py-6">
-              <p className="text-sm text-gray-400">
-                © 2023 Copyright <span className="font-bold">JN Barber</span>
-              </p>
-            </CardContent>
-          </Card>
-        </footer>
+        <Toaster />
+        <Footer />
       </body>
       <link rel="icon" href="./icon.png" />
     </html>
