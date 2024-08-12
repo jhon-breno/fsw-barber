@@ -5,8 +5,10 @@ import { Input } from "./_components/ui/input"
 import Image from "next/image"
 import { db } from "./_lib/prisma"
 import BarbershopItem from "./_components/barbershop-item"
-import { quickSearchOptions } from "./_contants/search"
+import { quickSearchOptions } from "./_constants/search"
 import BookingItem from "./_components/booking-item"
+import ClientHeader from "./_components/clientHeader"
+import Search from "./_components/search"
 
 const Home = async () => {
   const barbershops = await db.barbershop.findMany({})
@@ -20,15 +22,14 @@ const Home = async () => {
       {/* HEAD */}
       <Header />
       <div className="p-5">
-        <h2 className="text-xl font-bold">Olá, Jhon</h2>
-        <p>Sexta-feira, 09 de agosto</p>
+        {/* SAUDAÇÃO */}
+        <ClientHeader />
+        {/* <h2 className="text-xl font-bold">Olá, Jhon</h2>
+        <p>Sexta-feira, 09 de agosto</p> */}
 
         {/* BUSCA */}
-        <div className="mt-6 flex items-center gap-2">
-          <Input placeholder="Faça sua busca..."></Input>
-          <Button>
-            <SearchIcon />
-          </Button>
+        <div className="mt-6">
+          <Search />
         </div>
 
         {/* BUSCA RÁPIDA */}

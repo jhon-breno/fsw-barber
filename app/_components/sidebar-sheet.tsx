@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "./ui/button"
 import { CalendarIcon, HomeIcon, LogInIcon, MenuIcon } from "lucide-react"
 import { SheetClose, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet"
-import { quickSearchOptions } from "../_contants/search"
+import { quickSearchOptions } from "../_constants/search"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import Link from "next/link"
 import {
