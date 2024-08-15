@@ -10,7 +10,7 @@ const capitalizeFirstLetter = (string: string) => {
 
 const ClientHeader = () => {
   const { data: session } = useSession()
-  const userName = session?.user?.name
+  const userName = session?.user?.name?.split(" ")
 
   const currentDate = new Date()
   const formattedDate = format(currentDate, "EEEE, dd 'de' MMMM", {
@@ -21,7 +21,7 @@ const ClientHeader = () => {
   return (
     <div>
       <h2 className="text-xl font-bold">
-        {userName ? `Olá, ${userName}!` : "Olá!"}
+        {userName ? `Olá, ${userName[0]}` : "Olá!"}
       </h2>
       <p>{capitalizedDate}.</p>
     </div>
