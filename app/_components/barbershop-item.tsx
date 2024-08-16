@@ -41,7 +41,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
           >
             {barbershop.address}
           </p>
-          <Button variant="secondary" className="mt-3 w-full">
+          <Button variant="secondary" className="mt-3 flex w-full">
             <Link href={`/barbershops/${barbershop.id}`}>Reservar</Link>
           </Button>
         </div>

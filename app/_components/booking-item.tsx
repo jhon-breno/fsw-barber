@@ -32,6 +32,7 @@ import { toast } from "sonner"
 import { useState } from "react"
 import BookingSummary from "./booking-summary"
 import { deleteBooking } from "../_actions/delete-booking"
+import { CalendarX2, SquareArrowLeft } from "lucide-react"
 
 interface BookingItemProps {
   booking: Prisma.BookingGetPayload<{
@@ -153,14 +154,16 @@ const BookingItem = ({ booking }: BookingItemProps) => {
         <SheetFooter className="mt-6">
           <div className="flex items-center gap-3">
             <SheetClose asChild>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full gap-2">
+                <SquareArrowLeft />
                 Voltar
               </Button>
             </SheetClose>
             {isConfirmed && (
               <Dialog>
                 <DialogTrigger className="w-full">
-                  <Button variant="destructive" className="w-full">
+                  <Button variant="destructive" className="w-full gap-2">
+                    <CalendarX2 />
                     Cancelar Reserva
                   </Button>
                 </DialogTrigger>

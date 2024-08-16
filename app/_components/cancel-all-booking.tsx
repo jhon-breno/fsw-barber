@@ -5,6 +5,7 @@ import { deleteFutureBookings } from "../_actions/delete-all-booking"
 import { useTransition } from "react"
 import { toast } from "sonner"
 import Image from "next/image"
+import { CalendarX2 } from "lucide-react"
 
 const CancelAllBooking = () => {
   const [isPending, startTransition] = useTransition()
@@ -28,7 +29,7 @@ const CancelAllBooking = () => {
       className="flex justify-between gap-1 rounded-xl p-2 text-xs font-bold"
       title="Cancelar todos os agendamentos confirmados"
     >
-      <Image src="/cancel.png" width={22} height={22} alt="cancelar" />
+      <CalendarX2 />
       {isPending ? "Cancelando..." : ""}
     </Button>
   )
