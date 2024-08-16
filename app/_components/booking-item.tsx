@@ -28,10 +28,10 @@ import {
   DialogTrigger,
 } from "./ui/dialog"
 import { DialogClose } from "@radix-ui/react-dialog"
-// import { deleteBooking } from "../_actions/delete-booking"
 import { toast } from "sonner"
 import { useState } from "react"
 import BookingSummary from "./booking-summary"
+import { deleteBooking } from "../_actions/delete-booking"
 
 interface BookingItemProps {
   booking: Prisma.BookingGetPayload<{
@@ -54,7 +54,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
   const isConfirmed = isFuture(booking.date)
   const handleCancelBooking = async () => {
     try {
-      //await deleteBooking(booking.id)
+      await deleteBooking(booking.id)
       setIsSheetOpen(false)
       toast.success("Reserva cancelada com sucesso!")
     } catch (error) {
